@@ -1,6 +1,6 @@
 import java.io.*; 
 import java.util.Scanner;
-public class rev
+public class re
 {
 public static void main(String[] args) {
 
