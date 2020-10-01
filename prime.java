@@ -1,6 +1,6 @@
 import java.io.*; 
 import java.util.Scanner;
-public class prime
+public class prme
 {
 	public static void main(String[] args) {
     int i, n,count=0;
