@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class sec {
+public class se {
     public static void main(String[] args) {
         int n,i,j,temp;
         Scanner s = new Scanner(System.in);
