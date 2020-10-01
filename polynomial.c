@@ -1,30 +1,38 @@
 #include<stdio.h>
+#include<stdlib.h>
+
 int main()
 {
-    int n,m,a[10],b[10],i,j;
-    scanf("%d%d",&n,&m);
-    for(i=n;i>=0;i--)
-    scanf("%d",&a[i]);
-    for(i=m;i>=0;i--)
-    scanf("%d",&b[i]);
-    
-    for(i=n,j=m;i>=0&&j>=0;)
+    int N,M,*N1,*M1,*S;
+    scanf("%d %d",&N,&M);
+    N1 = (int *)malloc((N+1)*sizeof(int)); 
+    M1 = (int *)malloc((M+1)*sizeof(int));
+    for(int i=N;i>=0;i--)
     {
-        if(i>j)
-        {
-            printf("%d ",a[i]);
-            i--;
-        }
-        else if(j>i)
-        {
-            printf("%d ",b[j]);
-            j--;
-        }
-        else {
-        printf("%d ",a[i]+b[j]);
-        i--;
-        j--;
-        }
+        scanf("%d",&N1[i]);
     }
-return 0;
-}
+    for(int i=M;i>=0;i--)
+    {
+        scanf("%d",&M1[i]);
+    }
+    int max = (N>M)? N : M;
+    S = (int *)malloc((max+1)*sizeof(int));
+    int i = 0;
+    while(i<=M && i<=N)
+    {
+        S[i] = N1[i]+M1[i];
+        i++;
+    }
+    while(i<=N)
+    {
+        S[i]=N1[i];
+        i++;
+    }
+    while(i<=M)
+    {
+        S[i]=M1[i];
+        i++;
+    }   
+    for(int i = max;i>=0;i--)
+    printf("%d ",S[i]);
+}   
